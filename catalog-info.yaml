@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ihrjr2cyd-nodejs-gitops
+  description: This is GitOps manifest for ihrjr2cyd-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: ihrjr2cyd-nodejs
+    janus-idp.io/tekton: ihrjr2cyd-nodejs
+    backstage.io/kubernetes-id: ihrjr2cyd-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ihrjr2cyd-nodejs
